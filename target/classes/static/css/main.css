@@ -1,0 +1,8 @@
+.hide{
+    display: none;
+}
+.bottomspace{
+    margin-bottom: 15px;
+    font-size: 10pt;
+}
+table.dataTable tbody tr.selected{background-color:#B0BED9}
