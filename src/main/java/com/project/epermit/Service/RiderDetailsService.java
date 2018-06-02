@@ -83,6 +83,10 @@ public class RiderDetailsService {
         return riderDetailsDao.fetchUnverifiedRiders(username);
 
     }
+    public List<RiderDetails> fetchListVerifiedRiders() {
+        return riderDetailsDao.findAllByRiderVerificationStatus('Y');
+
+    }
 
     public void rejectUser(String user, String adminuser) {
         Optional<RiderDetails> duser = riderDetailsDao.findByRiderUniqueCode(user);
@@ -145,5 +149,9 @@ public class RiderDetailsService {
 
     public List<RiderDetails> findAll() {
         return riderDetailsDao.findAll();
+    }
+
+    public Optional<RiderDetails> findByUniqueIdVerified(String riderid) {
+        return riderDetailsDao.findByRiderUniqueCodeAndAndRiderVerificationStatusIsNot(riderid,'N');
     }
 }

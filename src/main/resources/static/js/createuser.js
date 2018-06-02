@@ -6,19 +6,19 @@ $('#role').on('change',function(e){
         $('#centercontainer option').each(function(){
                 $(this).removeAttr('selected');
         });
-        $('#center').removeAttr('disabled');
+        $('#center').removeAttr('readonly');
         $('#centercontainer').attr("required","required");
     }
     else{
         $('#centercontainer').addClass('hide');
-        $('#center').removeAttr('disabled');
+        $('#center').removeAttr('readonly');
         $('#centercontainer option').each(function(){
             $(this).removeAttr('selected');
             var txt = $(this).attr('value');
             if(txt === "101"){
                 $(this).removeAttr('selected');
                 $(this).attr('selected','selected');
-                $('#center').attr('disabled','disabled');
+                $('#center').attr('readonly','readonly');
             }
         });
     }

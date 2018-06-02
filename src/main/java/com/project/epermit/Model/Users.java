@@ -74,7 +74,7 @@ public class Users {
     private Date rejectDate;
     @Column(name = "CENTER")
     private String centerId;
-    @ManyToOne(targetEntity=Centers.class, fetch=FetchType.EAGER,cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity=Centers.class, fetch=FetchType.EAGER)
     @JoinColumn(name="CENTER",referencedColumnName = "ID",insertable = false,updatable = false)
     private Centers center;
     public Users() {

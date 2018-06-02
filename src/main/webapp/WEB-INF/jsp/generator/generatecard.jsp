@@ -66,11 +66,11 @@
                         <h3>Role: ${userDetails.roleId}</h3>
                         <hr>
                         <ul class="nav side-menu">
-                            <li id="user" class="active"><a href="${pageContext.request.contextPath}/internal/dashboard"><i class="fa fa-th-list"></i> Dashboard</a></li>
-                            <li><a href="${pageContext.request.contextPath}/internal/verifyuserpage"><i
-                                    class="fa fa-user"></i> Verify User</a></li>
-                            <li><a href="${pageContext.request.contextPath}/internal/logout"><i
-                                    class="fa fa-sign-out"></i> log Off</a></li>
+                            <li id="user"><a href="${pageContext.request.contextPath}/generator/dashboard"><i class="fa fa-th-list"></i> Dashboard</a></li>
+                            <li class="active"><a href="${pageContext.request.contextPath}/generator/generatecard"><i
+                                    class="fa fa-user"></i> Generate Cards</a></li>
+                            <li><a href="${pageContext.request.contextPath}/generator/logout"> <i
+                                    class="fa fa-sign-out"></i> Log Off</a></li>
                         </ul>
                     </div>
 
@@ -92,7 +92,7 @@
             <div class="col-sm-12">
                 <div class="page-title">
                     <div class="title_left">
-                        <h3><strong><i class="fa fa-user"></i>Verify Created Users</strong></h3>
+                        <h3><strong><i class="fa fa-user"></i>Generate Cards</strong></h3>
                     </div>
                 </div>
                 <div class="row">
@@ -102,7 +102,7 @@
                                 <div class="col-md-12 col-md-12">
                                     <div class="x_panel">
                                         <div class="x_title">
-                                            <h2><i class="fa fa-th-list"></i>Verify Created Users</h2>
+                                            <h2><i class="fa fa-th-list"></i>Generate Cards</h2>
                                             <div class="clearfix"></div>
                                         </div>
                                         <div class="x_content">
@@ -113,14 +113,28 @@
                                                        class="table table-striped table-bordered">
                                                     <thead>
                                                     <tr>
-                                                        <th>User ID</th>
-                                                        <th>User Surname</th>
-                                                        <th>User First Name</th>
-                                                        <th>User Username</th>
-                                                        <th>User Email</th>
-                                                        <th>User Role</th>
-                                                        <th>User Center</th>
-                                                        <th>User Phone Number</th>
+                                                        <th>Rider ID</th>
+                                                        <th>Rider Surname</th>
+                                                        <th>Rider First Name</th>
+                                                        <th>Rider Other Names</th>
+                                                        <th>Rider Gender</th>
+                                                        <th>Rider DOB</th>
+                                                        <th>Rider Phone Number</th>
+                                                        <th>Rider Email</th>
+                                                        <th>Rider Address</th>
+                                                        <th>Rider State of Origin</th>
+                                                        <th>Rider LGA</th>
+                                                        <th>Rider Center</th>
+                                                        <th>Rider Image</th>
+                                                        <th>Vehicle Unique ID</th>
+                                                        <th>Vehicle type</th>
+                                                        <th>Vehicle Manufaturer Name</th>
+                                                        <th>Vehicle Model</th>
+                                                        <th>Vehicle Chassis Number</th>
+                                                        <th>Vehicle Engine Number</th>
+                                                        <th>Vehicle Plate Number</th>
+                                                        <th>Vehicle Registered By</th>
+                                                        <th>Vehicle Registration Date</th>
                                                         <th>Created By</th>
                                                         <th>Creation Date</th>
 
@@ -129,14 +143,28 @@
                                                     </thead>
                                                     <tfoot>
                                                     <tr>
-                                                        <th>User ID</th>
-                                                        <th>User Surname</th>
-                                                        <th>User First Name</th>
-                                                        <th>User Username</th>
-                                                        <th>User Email</th>
-                                                        <th>User Role</th>
-                                                        <th>User Center</th>
-                                                        <th>User Phone Number</th>
+                                                        <th>Rider ID</th>
+                                                        <th>Rider Surname</th>
+                                                        <th>Rider First Name</th>
+                                                        <th>Rider Other Names</th>
+                                                        <th>Rider Gender</th>
+                                                        <th>Rider DOB</th>
+                                                        <th>Rider Phone Number</th>
+                                                        <th>Rider Email</th>
+                                                        <th>Rider Address</th>
+                                                        <th>Rider State of Origin</th>
+                                                        <th>Rider LGA</th>
+                                                        <th>Rider Center</th>
+                                                        <th>Rider Image</th>
+                                                        <th>Vehicle Unique ID</th>
+                                                        <th>Vehicle type</th>
+                                                        <th>Vehicle Manufaturer Name</th>
+                                                        <th>Vehicle Model</th>
+                                                        <th>Vehicle Chassis Number</th>
+                                                        <th>Vehicle Engine Number</th>
+                                                        <th>Vehicle Plate Number</th>
+                                                        <th>Vehicle Registered By</th>
+                                                        <th>Vehicle Registration Date</th>
                                                         <th>Created By</th>
                                                         <th>Creation Date</th>
 
@@ -145,18 +173,32 @@
                                                     </tfoot>
                                                     <tbody>
 
-                                                    <c:forEach var="user" items="${users}">
+                                                    <c:forEach var="user" items="${riders}">
                                                         <tr>
-                                                            <td>${user.id}</td>
-                                                            <td>${user.surname}</td>
-                                                            <td>${user.fname}</td>
-                                                            <td>${user.username}</td>
-                                                            <td>${user.email}</td>
-                                                            <td>${user.roleId}</td>
+                                                            <td>${user.riderUniqueCode}</td>
+                                                            <td>${user.riderSurname}</td>
+                                                            <td>${user.riderFirstname}</td>
+                                                            <td>${user.riderOtherNames}</td>
+                                                            <td>${user.riderGender}</td>
+                                                            <td>${user.riderDateOfBirth}</td>
+                                                            <td>${user.riderPhonenumber} </td>
+                                                            <td>${user.riderEmail}</td>
+                                                            <td>${user.riderAddress}</td>
+                                                            <td>${user.riderStateOfOrigin}</td>
+                                                            <td>${user.riderLocalGovt}</td>
                                                             <td>${user.center.centerName}, ${user.center.centerLocation} </td>
-                                                            <td>${user.phonenumber}</td>
-                                                            <td>${user.creator}</td>
-                                                            <td>${user.creationDate}</td>
+                                                            <td><img src="${user.riderImageData}" class="img img-responsive"/></td>
+                                                            <td>${user.vehicleDetails.vehicleUniqueId}</td>
+                                                            <td>${user.vehicleDetails.vehicleType}</td>
+                                                            <td>${user.vehicleDetails.vehicleManufacturerName}</td>
+                                                            <td>${user.vehicleDetails.vehicleModel}</td>
+                                                            <td>${user.vehicleDetails.vehicleChassisNumber}</td>
+                                                            <td>${user.vehicleDetails.vehicleEngineNumber}</td>
+                                                            <td>${user.vehicleDetails.vehiclePlateNumber}</td>
+                                                            <td>${user.vehicleDetails.vehicleRegisteredBy}</td>
+                                                            <td>${user.vehicleDetails.vehicleRegistrationDate}</td>
+                                                            <td>${user.riderRegisteredBy}</td>
+                                                            <td>${user.riderRegistrationDate}</td>
                                                         </tr>
                                                     </c:forEach>
                                                     </tbody>
@@ -171,7 +213,7 @@
                         </div>
                         <div class="col-md-12" align="center" style="margin-top:10px">
                             <button id="button" class="btn-lg btn btn-danger">Verify Selected</button>
-                            <button id="buttonreject" class="btn-lg btn btn-danger">Reject Selected</button>
+                            <%--<button id="buttonreject" class="btn-lg btn btn-danger">Reject Selected</button>--%>
                         </div>
                     </div>
                 </div>

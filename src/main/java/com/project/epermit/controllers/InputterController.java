@@ -94,6 +94,7 @@ public class InputterController {
         user.setRiderRegistrationStatus("RIDER LEVEL");
         user.setRiderVerificationStatus('N');
         user.setRejected('N');
+        user.setGenerateCard('N');
         BaseResponse resp = riderDetailsService.save(user);
         if (!resp.getResponsecode().equals("00")) {
             model.addAttribute("message", "An error occured because : " + resp.getResponsemessage());

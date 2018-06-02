@@ -83,6 +83,13 @@ public class RiderDetails {
     @Column(name = "REJECT_DATE")
     @Temporal(TemporalType.TIMESTAMP)
     private Date rejectDate;
+    @Column(name = "CARD_GENERATED")
+    private char GenerateCard;
+    @Column(name = "CARD_GENERATED_BY")
+    private String generateBy;
+    @Column(name = "CARD_GENERATED_DATE")
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date generatedDate;
     @OneToOne(targetEntity=VehicleDetails.class, fetch=FetchType.EAGER,cascade = CascadeType.ALL)
     @Cascade(org.hibernate.annotations.CascadeType.DELETE_ORPHAN)
     @JoinColumn(name="VEHICLE_ID",referencedColumnName = "ID",insertable = false,updatable = false)
@@ -91,6 +98,30 @@ public class RiderDetails {
     @JoinColumn(name="REGISTRATION_CENTER_ID",referencedColumnName = "ID",insertable = false,updatable = false)
     private Centers center;
     public RiderDetails() {
+    }
+
+    public char getGenerateCard() {
+        return GenerateCard;
+    }
+
+    public void setGenerateCard(char generateCard) {
+        GenerateCard = generateCard;
+    }
+
+    public String getGenerateBy() {
+        return generateBy;
+    }
+
+    public void setGenerateBy(String generateBy) {
+        this.generateBy = generateBy;
+    }
+
+    public Date getGeneratedDate() {
+        return generatedDate;
+    }
+
+    public void setGeneratedDate(Date generatedDate) {
+        this.generatedDate = generatedDate;
     }
 
     public char getRejected() {
