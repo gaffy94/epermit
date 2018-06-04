@@ -32,6 +32,7 @@ public interface RiderDetailsDao extends JpaRepository<RiderDetails,Long> {
     Long fetchGenderDistributionVal(@Param("val") String val);
     @Query(value = "SELECT  COUNT(*) AS COUNT FROM RIDERS WHERE REGISTRATION_CENTER_ID = :id",nativeQuery = true)
     Long fetchCenterDistributionVal(@Param("id") Long id);
-    Optional<RiderDetails> findByRiderUniqueCodeAndAndRiderVerificationStatusIsNot(@Param("userid") String userid,@Param("status") char status);
-    List<RiderDetails> findAllByRiderVerificationStatus(@Param("status") char status);
+    Optional<RiderDetails> findByRiderUniqueCodeAndRiderVerificationStatusIsNot(@Param("userid") String userid,@Param("status") char status);
+    @Query(value = "SELECT * FROM RIDERS t WHERE t.VERIFICATION_STATUS = :status AND t.CARD_GENERATED = :cardgenstatus",nativeQuery = true)
+    List<RiderDetails> findAllByCustQuery(@Param("status") char status,@Param("cardgenstatus") char cardgenstatus);
 }

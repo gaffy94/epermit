@@ -212,7 +212,7 @@
                             <br/>
                         </div>
                         <div class="col-md-12" align="center" style="margin-top:10px">
-                            <button id="button" class="btn-lg btn btn-danger">Verify Selected</button>
+                            <button id="button" class="btn-lg btn btn-danger">Generate Card</button>
                             <%--<button id="buttonreject" class="btn-lg btn btn-danger">Reject Selected</button>--%>
                         </div>
                     </div>
@@ -250,6 +250,6 @@
 <!-- Custom Theme Scripts -->
 <script src="${pageContext.request.contextPath}/js/custom.js"></script>
 <!--Page Script-->
-<script src="${pageContext.request.contextPath}/js/verifyuser.js"></script>
+<script src="${pageContext.request.contextPath}/js/generatecard.js"></script>
 </body>
 </html>

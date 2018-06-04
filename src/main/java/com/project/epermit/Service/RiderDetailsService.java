@@ -84,7 +84,7 @@ public class RiderDetailsService {
 
     }
     public List<RiderDetails> fetchListVerifiedRiders() {
-        return riderDetailsDao.findAllByRiderVerificationStatus('Y');
+        return riderDetailsDao.findAllByCustQuery('Y','N');
 
     }
 
@@ -152,6 +152,24 @@ public class RiderDetailsService {
     }
 
     public Optional<RiderDetails> findByUniqueIdVerified(String riderid) {
-        return riderDetailsDao.findByRiderUniqueCodeAndAndRiderVerificationStatusIsNot(riderid,'N');
+        return riderDetailsDao.findByRiderUniqueCodeAndRiderVerificationStatusIsNot(riderid,'N');
+    }
+
+    public void generateCard(String user, String adminuser) {
+        Optional<RiderDetails> duser = riderDetailsDao.findByRiderUniqueCode(user);
+        duser.get().setGenerateBy(adminuser);
+        duser.get().setGenerateCard('Y');
+        String date = usersDao.getDatabaseDate();
+        System.out.println("Database Date now is : " + date);
+        DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+        Date ddate = new Date();
+        try {
+            ddate = formatter.parse(date);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        duser.get().setGeneratedDate(ddate);
+        //usersDao.verifyUser(adminuser,user);
+        riderDetailsDao.save(duser.get());
     }
 }

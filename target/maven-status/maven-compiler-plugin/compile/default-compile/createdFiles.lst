@@ -29,6 +29,7 @@ com\project\epermit\EPermitApplication.class
 com\project\epermit\configuration\AuditorAwareImpl.class
 com\project\epermit\Model\RegisteredVehicleDistribution.class
 com\project\epermit\Model\RVD.class
+com\project\epermit\controllers\GeneratorController.class
 com\project\epermit\dao\BankPaymentsDao.class
 com\project\epermit\controllers\MainController.class
 com\project\epermit\dao\UsersDao.class
